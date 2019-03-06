@@ -3,11 +3,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdcommenter'
 Plug 'kien/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
+Plug 'easymotion/vim-easymotion'
 Plug 'w0rp/ale', { 'do': 'pip install flake8 isort yapf' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -60,8 +60,8 @@ colorscheme gruvbox
 "set background
 set background=dark
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
 "open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
+
+nmap s <Plug>(easymotion-bd-w)
+let g:deoplete#enable_at_startup = 1
