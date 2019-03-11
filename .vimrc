@@ -8,14 +8,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
+Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale', { 'do': 'pip install flake8 isort yapf' }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 call plug#end()
 
 "disable vi compatibility
@@ -64,4 +58,4 @@ set background=dark
 map <C-n> :NERDTreeToggle<CR>
 
 nmap s <Plug>(easymotion-bd-w)
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
