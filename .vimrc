@@ -30,6 +30,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+"enable backspace indent
 set backspace=indent,eol,start
 
 "turn line numbers on
@@ -63,4 +64,5 @@ set background=dark
 "open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
+"enable easymotion mode
 nmap <space> <Plug>(easymotion-bd-w)
