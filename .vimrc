@@ -2,18 +2,22 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'vim-airline/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
-Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale', { 'do': 'pip install flake8 isort yapf' }
+Plug 'vim-airline/vim-airline'
+Plug 'w0ng/vim-hybrid'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "disable vi compatibility
 set nocompatible
+
+"enable utf-8
+set encoding=utf-8
 
 "use indentation of previous line
 set autoindent
@@ -21,10 +25,12 @@ set autoindent
 "use intelligent indentation for C
 set smartindent
 
-"configura tabwidth and insert spaces instead of tabs
+"setup tabwidth and insert spaces instead of tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+set backspace=indent,eol,start
 
 "turn line numbers on
 set number
@@ -57,5 +63,4 @@ set background=dark
 "open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
-nmap s <Plug>(easymotion-bd-w)
-"let g:deoplete#enable_at_startup = 1
+nmap <space> <Plug>(easymotion-bd-w)
