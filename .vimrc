@@ -7,7 +7,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'sirver/ultisnips'
 Plug 'morhetz/gruvbox'
-Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
@@ -59,7 +58,7 @@ set ignorecase  "ignore case sensitive
 set smartcase   " unless they contain at least one capital letter
 
 "set colorscheme
-colorscheme Tomorrow-Night
+colorscheme gruvbox
 
 "set background
 set background=dark
@@ -73,3 +72,5 @@ nmap <space> <Plug>(easymotion-bd-w)
 "let g:deoplete#enable_at_startup = 1
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/.ycm_c-c++_conf.py'
+
+let g:airline_theme='simple'
