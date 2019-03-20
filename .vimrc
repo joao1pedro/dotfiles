@@ -4,16 +4,20 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'honza/vim-snippets'
-Plug 'sirver/ultisnips'
-Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'w0rp/ale', { 'do': 'pip install flake8 isort yapf' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'valloric/youcompleteme'
+"snippets
+Plug 'honza/vim-snippets'
+Plug 'sirver/ultisnips'
+"color themes
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
+filetype plugin indent on
 
 "disable vi compatibility
 set nocompatible
@@ -57,11 +61,15 @@ set incsearch   "incremental searching
 set ignorecase  "ignore case sensitive
 set smartcase   " unless they contain at least one capital letter
 
+let g:solarized_termcolors=256
 "set colorscheme
-colorscheme gruvbox
+colorscheme solarized
 
 "set background
 set background=dark
+"set t_Co=256
+"set airline theme
+let g:airline_theme='simple'
 
 "open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
@@ -69,8 +77,17 @@ map <C-n> :NERDTreeToggle<CR>
 "enable easymotion mode
 nmap <space> <Plug>(easymotion-bd-w)
 
-"let g:deoplete#enable_at_startup = 1
+"set path .ycm_extra_conf
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/third_party/ycmd/.ycm_extra_conf.py'
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/.ycm_c-c++_conf.py'
+"disable ycm syntax check
+let g:ycm_show_diagnostics_ui = 0
 
-let g:airline_theme='simple'
+" in normal mode F2 will save the file
+nmap <F2> :w<CR>
+" in insert mode F2 will exit insert, save, enters insert again
+imap <F2> <ESC>:w<CR>i
+" build using makeprg with <F7>
+map <F7> :make<CR>
+" build using makeprg with <S-F7>
+map <S-F7> :make clean all<CR>
