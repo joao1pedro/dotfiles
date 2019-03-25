@@ -13,6 +13,7 @@ Plug 'honza/vim-snippets'
 Plug 'sirver/ultisnips'
 "color themes
 Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -61,18 +62,20 @@ set incsearch   "incremental searching
 set ignorecase  "ignore case sensitive
 set smartcase   " unless they contain at least one capital letter
 
-let g:solarized_termcolors=256
-"set colorscheme
-colorscheme solarized
-
-"set background
+"enable termguicolors
+set termguicolors
+"define background
 set background=dark
-"set t_Co=256
+"set colorscheme
+colorscheme solarized8
+
 "set airline theme
-let g:airline_theme='simple'
+let g:airline_theme='solarized'
 
 "open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 "enable easymotion mode
 nmap <space> <Plug>(easymotion-bd-w)
@@ -80,14 +83,18 @@ nmap <space> <Plug>(easymotion-bd-w)
 "set path .ycm_extra_conf
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/third_party/ycmd/.ycm_extra_conf.py'
 
-"disable ycm syntax check
+"ycm setup
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_complete_in_comments = 1 
+let g:ycm_seed_identifiers_with_syntax = 1 
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 
-" in normal mode F2 will save the file
-nmap <F2> :w<CR>
-" in insert mode F2 will exit insert, save, enters insert again
-imap <F2> <ESC>:w<CR>i
-" build using makeprg with <F7>
-map <F7> :make<CR>
-" build using makeprg with <S-F7>
-map <S-F7> :make clean all<CR>
+"utilsnippets cfg
+let g:UltiSnipsSnippetsDir= $HOME.'/.vim/UltiSnips/'
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-s-k>"
+
+"enable syntax highlight asm
+let g:asmsyntax = 'nasm'
