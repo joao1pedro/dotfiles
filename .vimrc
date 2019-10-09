@@ -10,6 +10,7 @@ Plug 'ARM9/arm-syntax-vim'
 Plug 'honza/vim-snippets'
 "color themes
 Plug 'morhetz/gruvbox'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 call plug#end()
 
 filetype plugin indent on
@@ -57,12 +58,12 @@ set ignorecase  "ignore case sensitive
 set smartcase   " unless they contain at least one capital letter
 
 "enable color scheme tmux
-"set t_Co=256
+set t_Co=256
 
 "define background
 set background=dark
 "set colorscheme
-colorscheme gruvbox
+colorscheme onehalfdark
 
 "open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
@@ -71,7 +72,7 @@ map <C-n> :NERDTreeToggle<CR>
 nmap <space> <Plug>(easymotion-bd-w)
 
 "enable syntax highlight asm
-let g:asmsyntax = 'nasm'
+"let g:asmsyntax = 'nasm'
 
 "enable syntax highlight arm-asm
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
