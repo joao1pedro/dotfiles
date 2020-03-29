@@ -1,16 +1,16 @@
 call plug#begin()
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
-Plug 'w0rp/ale', { 'do': 'pip install fake8 isort yapf' }
+"Plug 'w0rp/ale', { 'do': 'pip install fake8 isort yapf' }
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'ARM9/arm-syntax-vim'
+"Plug 'ARM9/arm-syntax-vim'
 "completion
 "snippets
 Plug 'honza/vim-snippets'
 "color themes
 Plug 'morhetz/gruvbox'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 call plug#end()
 
 filetype plugin indent on
@@ -63,7 +63,7 @@ set t_Co=256
 "define background
 set background=dark
 "set colorscheme
-colorscheme onehalfdark
+colorscheme gruvbox
 
 "open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
@@ -75,4 +75,4 @@ nmap <space> <Plug>(easymotion-bd-w)
 "let g:asmsyntax = 'nasm'
 
 "enable syntax highlight arm-asm
-au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
+"au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
