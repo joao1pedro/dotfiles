@@ -2,8 +2,8 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
-"Plug 'w0rp/ale', { 'do': 'pip install fake8 isort yapf' }
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 "Plug 'ARM9/arm-syntax-vim'
 "completion
