@@ -2,15 +2,17 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
-Plug 'junegunn/fzf', { 'do': './install --all' } | Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ervandew/supertab'
+"Plug 'junegunn/fzf', { 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 "Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 "Plug 'ARM9/arm-syntax-vim'
 "completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "snippets
-"Plug 'honza/vim-snippets'
 Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 "color themes
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -67,8 +69,8 @@ set t_Co=256
 "define background
 set background=dark
 "set colorscheme
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme dracula
+let g:airline_theme='dracula'
 
 "NERDTree key maps
 map <C-n> :NERDTreeToggle<CR>
@@ -95,4 +97,15 @@ nmap <silent> gr <Plug>(coc-references)
 "enable syntax highlight arm-asm
 "au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 
+"source coc vim config
 source $HOME/.config/nvim/plug-config/coc.vim
+
+" syntastic setup
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
