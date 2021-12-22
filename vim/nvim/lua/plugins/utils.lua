@@ -3,22 +3,22 @@ require'nvim-web-devicons'.get_icons()
 
 
 -- Para Barra de status
-require("lfs")
+--require("lfs")
 
-local function dot_git_exists()
-  local path = "./.git"
-  if (lfs.attributes(path, "mode") == "directory") then
-    return true
-  end
-  return false
-end
+--local function dot_git_exists()
+--  local path = "./.git"
+--  if (lfs.attributes(path, "mode") == "directory") then
+--    return true
+--  end
+--  return false
+--end
 
-if dot_git_exists() then
-  branch = '-branch'
-else 
-  branch = '-📁'
+--if dot_git_exists() then
+--  branch = '-branch'
+--else 
+--  branch = '-📁'
   --branch = '-  '
-end
+--end
 
 local function get_var(my_var_name)
   return vim.api.nvim_get_var(my_var_name)
@@ -98,8 +98,4 @@ require("indent_blankline").setup {
         "IndentBlanklineIndent6",
     },
 }
-
-require('nvim-autopairs').setup({
-  enable_check_bracket_line = false
-})
 
